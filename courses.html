@@ -1,0 +1,286 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>College Prep Courses by Grade Level</title>
+
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" crossorigin="anonymous" />
+
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      padding: 20px;
+      background: #fff;
+      color: #000;
+    }
+
+    .title {
+      text-align: center;
+      margin-bottom: 20px;
+    }
+
+    .title h1 {
+      margin: 0;
+      font-size: 24px;
+    }
+
+    .title h2 {
+      margin: 5px 0 10px;
+      font-size: 16px;
+      font-weight: normal;
+      color: #555;
+    }
+
+    .tabs {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      margin-bottom: 10px;
+      gap: 10px;
+    }
+
+    .tab {
+      padding: 8px 16px;
+      border: 1px solid #ccc;
+      border-radius: 8px;
+      background-color: #eee;
+      cursor: pointer;
+      transition: background 0.3s;
+    }
+
+    .tab.active {
+      background-color: #333;
+      color: #fff;
+    }
+
+    .container {
+      display: none;
+      flex-direction: row;
+      max-width: 700px;
+      margin: auto;
+      background: #fff;
+      border: 1px solid #ccc;
+      border-radius: 10px;
+      overflow: hidden;
+      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    }
+
+    .container.active {
+      display: flex;
+      animation: fadeIn 0.6s;
+    }
+
+    .list {
+      width: 35%;
+      background-color: #333;
+      color: white;
+      list-style: none;
+      margin: 0;
+      padding: 0;
+    }
+
+    .list li {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      padding: 12px 15px;
+      border-bottom: 1px solid #444;
+      cursor: pointer;
+      transition: background 0.2s;
+    }
+
+    .list li:hover,
+    .list li.active {
+      background-color: #777;
+    }
+
+    .list i {
+      width: 18px;
+      text-align: center;
+    }
+
+    .info {
+      width: 65%;
+      padding: 15px;
+      background-color: #f9f9f9;
+      color: #000;
+      opacity: 0;
+      animation: fadeIn 0.6s forwards;
+    }
+
+    .info h2 {
+      margin: 0 0 10px;
+      font-size: 18px;
+    }
+
+    .info p {
+      margin: 0;
+      font-size: 14px;
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(10px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    @media (max-width: 450px) {
+      .container {
+        flex-direction: column;
+        max-width: 100%;
+      }
+
+      .list, .info {
+        width: 100%;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="title">
+    <h1>College Prep Courses</h1>
+    <h2>Select a grade level</h2>
+  </div>
+
+  <div class="tabs">
+    <div class="tab active" data-tab="freshmen">Freshmen</div>
+    <div class="tab" data-tab="sophomore">Sophomore</div>
+    <div class="tab" data-tab="junior">Junior</div>
+    <div class="tab" data-tab="senior">Senior</div>
+  </div>
+
+  <!-- Containers for each grade level -->
+  <div class="container active" id="freshmen">
+    <ul class="list" id="freshmenList">
+      <li data-id="english" class="active"><i class="fas fa-book"></i> English I</li>
+      <li data-id="algebra"><i class="fas fa-square-root-alt"></i> Algebra I</li>
+      <li data-id="government"><i class="fas fa-landmark"></i> Government</li>
+      <li data-id="science"><i class="fas fa-atom"></i> Physical Science</li>
+      <li data-id="health"><i class="fas fa-heartbeat"></i> Health/PE</li>
+      <li data-id="electives"><i class="fas fa-puzzle-piece"></i> 3 Pathway/Elective</li>
+    </ul>
+    <div class="info" id="freshmenInfo">
+      <h2>English I</h2>
+      <p>This course develops reading, writing, and critical thinking skills through literature and composition.</p>
+    </div>
+  </div>
+
+  <div class="container" id="sophomore">
+    <ul class="list" id="sophomoreList">
+      <li data-id="english2" class="active"><i class="fas fa-book"></i> English II</li>
+      <li data-id="geometry"><i class="fas fa-drafting-compass"></i> Geometry</li>
+      <li data-id="history"><i class="fas fa-globe"></i> World History</li>
+      <li data-id="biology"><i class="fas fa-dna"></i> Biology I</li>
+      <li data-id="spanish"><i class="fas fa-language"></i> Spanish I</li>
+      <li data-id="seminar"><i class="fas fa-users"></i> Sophomore Seminar</li>
+      <li data-id="electives2"><i class="fas fa-puzzle-piece"></i> 2 Pathway/Elective</li>
+    </ul>
+    <div class="info" id="sophomoreInfo">
+      <h2>English II</h2>
+      <p>Focuses on expanding analytical writing and literary interpretation through global texts and essays.</p>
+    </div>
+  </div>
+
+  <div class="container" id="junior">
+    <ul class="list" id="juniorList">
+      <li data-id="english3" class="active"><i class="fas fa-book"></i> English III</li>
+      <li data-id="advAlgebra"><i class="fas fa-square-root-alt"></i> Advanced Algebra</li>
+      <li data-id="economics"><i class="fas fa-chart-line"></i> Economics</li>
+      <li data-id="chemistry"><i class="fas fa-flask"></i> Chemistry</li>
+      <li data-id="spanish2"><i class="fas fa-language"></i> Spanish II</li>
+      <li data-id="electives3"><i class="fas fa-puzzle-piece"></i> 3 Pathway/Electives</li>
+    </ul>
+    <div class="info" id="juniorInfo">
+      <h2>English III</h2>
+      <p>Develops critical analysis, research, and argumentation skills through American literature and essays.</p>
+    </div>
+  </div>
+
+  <div class="container" id="senior">
+    <ul class="list" id="seniorList">
+      <li data-id="english4" class="active"><i class="fas fa-book"></i> English IV</li>
+      <li data-id="collegeAlg"><i class="fas fa-square-root-alt"></i> College Algebra*</li>
+      <li data-id="ushistory"><i class="fas fa-flag-usa"></i> U.S. History I & II*</li>
+      <li data-id="biology2"><i class="fas fa-dna"></i> Biology II</li>
+      <li data-id="electives4"><i class="fas fa-puzzle-piece"></i> 4 Pathway/Elective</li>
+    </ul>
+    <div class="info" id="seniorInfo">
+      <h2>English IV</h2>
+      <p>Focuses on preparing students for college-level reading, writing, and analysis through advanced texts.</p>
+    </div>
+  </div>
+
+  <script>
+    const tabs = document.querySelectorAll('.tab');
+    const containers = document.querySelectorAll('.container');
+
+    tabs.forEach(tab => {
+      tab.addEventListener('click', () => {
+        tabs.forEach(t => t.classList.remove('active'));
+        containers.forEach(c => c.classList.remove('active'));
+
+        tab.classList.add('active');
+        document.getElementById(tab.dataset.tab).classList.add('active');
+      });
+    });
+
+    function setupListInteraction(listId, infoId, dataObj) {
+      const listItems = document.querySelectorAll(`#${listId} li`);
+      const infoBox = document.getElementById(infoId);
+
+      listItems.forEach(item => {
+        item.addEventListener('click', () => {
+          listItems.forEach(i => i.classList.remove('active'));
+          item.classList.add('active');
+
+          const id = item.dataset.id;
+          const data = dataObj[id];
+          infoBox.style.animation = 'none';
+          void infoBox.offsetWidth;
+          infoBox.style.animation = 'fadeIn 0.6s forwards';
+          infoBox.innerHTML = `<h2>${data.title}</h2><p>${data.description}</p>`;
+        });
+      });
+    }
+
+    setupListInteraction('freshmenList', 'freshmenInfo', {
+      english: { title: 'English I', description: 'This course develops reading, writing, and critical thinking skills through literature and composition.' },
+      algebra: { title: 'Algebra I', description: 'Covers foundational algebraic concepts including variables, equations, and functions.' },
+      government: { title: 'Government', description: 'Introduces the principles and structure of the U.S. government and civic responsibility.' },
+      science: { title: 'Physical Science', description: 'Explores principles of physics and chemistry, including motion, forces, and matter.' },
+      health: { title: 'Health/PE', description: 'Focuses on physical fitness, health education, and wellness strategies.' },
+      electives: { title: 'Pathway/Elective', description: 'Freshmen select three courses in a career pathway or from elective offerings to enhance skills and interests.' }
+    });
+
+    setupListInteraction('sophomoreList', 'sophomoreInfo', {
+      english2: { title: 'English II', description: 'Focuses on expanding analytical writing and literary interpretation through global texts and essays.' },
+      geometry: { title: 'Geometry', description: 'Covers geometric concepts, theorems, proofs, and applications in real-world contexts.' },
+      history: { title: 'World History', description: 'Explores major civilizations and historical themes from ancient to modern times.' },
+      biology: { title: 'Biology I', description: 'Introduces cellular biology, genetics, ecosystems, and scientific investigation.' },
+      spanish: { title: 'Spanish I (Spring Semester)', description: 'Develops basic communication skills in Spanish including speaking, listening, and reading.' },
+      seminar: { title: 'Sophomore Seminar', description: 'Supports career exploration, personal development, and academic planning.' },
+      electives2: { title: 'Pathway/Elective', description: 'Sophomore students select two additional courses aligned with their career goals or interests.' }
+    });
+
+    setupListInteraction('juniorList', 'juniorInfo', {
+      english3: { title: 'English III', description: 'Develops critical analysis, research, and argumentation skills through American literature and essays.' },
+      advAlgebra: { title: 'Advanced Algebra', description: 'Covers higher-level algebraic techniques including functions, polynomials, and matrices.' },
+      economics: { title: 'Economics', description: 'Examines principles of micro and macroeconomics and personal finance.' },
+      chemistry: { title: 'Chemistry', description: 'Studies matter, chemical reactions, and lab investigations.' },
+      spanish2: { title: 'Spanish II (Fall Semester)', description: 'Expands Spanish vocabulary and grammar with more conversational practice.' },
+      electives3: { title: 'Pathway/Electives', description: 'Juniors will choose three courses in a career pathway or from electives that enhance career readiness.' }
+    });
+
+    setupListInteraction('seniorList', 'seniorInfo', {
+      english4: { title: 'English IV', description: 'Focuses on preparing students for college-level reading, writing, and analysis through advanced texts.' },
+      collegeAlg: { title: 'College Algebra (Dual Enrollment)', description: 'College-level algebra course offered for dual enrollment credit.' },
+      ushistory: { title: 'U.S. History I & II (Dual Enrollment)', description: 'Dual enrollment U.S. History courses covering early to modern history.' },
+      biology2: { title: 'Biology II', description: 'Advanced biological topics, lab experiments, and preparation for college science.' },
+      electives4: { title: 'Pathway/Elective', description: 'Seniors will choose four electives in a career pathway to complete graduation requirements.' }
+    });
+  </script>
+
+</body>
+</html>

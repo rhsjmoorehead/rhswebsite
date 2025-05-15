@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>High School Courses - Accordion Style</title>
+
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" crossorigin="anonymous" />
+
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      padding: 20px;
+      background-color: #fff;
+      color: #000;
+    }
+
+    .title {
+      text-align: center;
+      margin-bottom: 20px;
+    }
+
+    .accordion {
+      max-width: 600px;
+      margin: auto;
+    }
+
+    .accordion-item {
+      border: 1px solid #ccc;
+      border-radius: 6px;
+      margin-bottom: 10px;
+      overflow: hidden;
+    }
+
+    .accordion-header {
+      background-color: #333;
+      color: #fff;
+      padding: 12px 16px;
+      cursor: pointer;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .accordion-header:hover {
+      background-color: #555;
+    }
+
+    .accordion-body {
+      background-color: #f9f9f9;
+      display: none;
+      padding: 16px;
+    }
+
+    .accordion-body ul {
+      list-style: none;
+      padding: 0;
+    }
+
+    .accordion-body li {
+      padding: 8px 0;
+      border-bottom: 1px solid #ddd;
+      display: flex;
+      align-items: flex-start;
+      gap: 10px;
+    }
+
+    .accordion-body li:last-child {
+      border-bottom: none;
+    }
+
+    .accordion-body i {
+      color: #333;
+      width: 20px;
+      text-align: center;
+      margin-top: 2px;
+    }
+
+    .course-description {
+      font-size: 13px;
+      color: #444;
+    }
+  </style>
+</head>
+<body>
+  <div class="title">
+    <h1>High School Courses</h1>
+    <h2>Grade Level Overview</h2>
+  </div>
+
+  <div class="accordion">
+    <div class="accordion-item">
+      <div class="accordion-header">Freshmen <i class="fas fa-chevron-down"></i></div>
+      <div class="accordion-body">
+        <ul>
+          <li><i class="fas fa-book-open"></i> English I <div class="course-description">Develops reading, writing, and analytical skills through literature.</div></li>
+          <li><i class="fas fa-square-root-alt"></i> Algebra I <div class="course-description">Introduces algebraic concepts including equations and functions.</div></li>
+          <li><i class="fas fa-landmark"></i> Government <div class="course-description">Explores the foundations and structure of the U.S. government.</div></li>
+          <li><i class="fas fa-atom"></i> Physical Science <div class="course-description">Covers basic physics and chemistry principles.</div></li>
+          <li><i class="fas fa-heartbeat"></i> Health/PE <div class="course-description">Focuses on fitness, health education, and physical activity.</div></li>
+          <li><i class="fas fa-puzzle-piece"></i> 3 Pathway/Electives <div class="course-description">Choose three elective or pathway courses based on interests.</div></li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="accordion-item">
+      <div class="accordion-header">Sophomore <i class="fas fa-chevron-down"></i></div>
+      <div class="accordion-body">
+        <ul>
+          <li><i class="fas fa-book"></i> English II <div class="course-description">Enhances literary analysis and composition skills.</div></li>
+          <li><i class="fas fa-drafting-compass"></i> Geometry <div class="course-description">Focuses on geometric principles, proofs, and theorems.</div></li>
+          <li><i class="fas fa-globe"></i> World History <div class="course-description">Examines global civilizations and historical developments.</div></li>
+          <li><i class="fas fa-dna"></i> Biology I <div class="course-description">Studies cell biology, genetics, ecology, and evolution.</div></li>
+          <li><i class="fas fa-language"></i> Spanish I <div class="course-description">Introduces basic Spanish vocabulary and grammar.</div></li>
+          <li><i class="fas fa-users"></i> Sophomore Seminar <div class="course-description">Prepares students for post-secondary goals and careers.</div></li>
+          <li><i class="fas fa-puzzle-piece"></i> 2 Pathway/Elective <div class="course-description">Select two additional elective or pathway courses.</div></li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="accordion-item">
+      <div class="accordion-header">Junior <i class="fas fa-chevron-down"></i></div>
+      <div class="accordion-body">
+        <ul>
+          <li><i class="fas fa-book"></i> English III <div class="course-description">Focuses on American literature and advanced writing skills.</div></li>
+          <li><i class="fas fa-square-root-alt"></i> Advanced Algebra <div class="course-description">Continues algebraic concepts with more complex functions.</div></li>
+          <li><i class="fas fa-chart-line"></i> Economics <div class="course-description">Teaches economic principles and personal finance basics.</div></li>
+          <li><i class="fas fa-flask"></i> Chemistry <div class="course-description">Explores chemical reactions, bonding, and laboratory techniques.</div></li>
+          <li><i class="fas fa-language"></i> Spanish II <div class="course-description">Expands vocabulary and communication in Spanish.</div></li>
+          <li><i class="fas fa-puzzle-piece"></i> 3 Pathway/Electives <div class="course-description">Students choose three courses from their pathway or electives.</div></li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="accordion-item">
+      <div class="accordion-header">Senior <i class="fas fa-chevron-down"></i></div>
+      <div class="accordion-body">
+        <ul>
+          <li><i class="fas fa-book"></i> English IV <div class="course-description">Emphasizes critical reading and advanced essay writing.</div></li>
+          <li><i class="fas fa-university"></i> College Algebra (DE) <div class="course-description">Dual enrollment course for advanced algebra concepts.</div></li>
+          <li><i class="fas fa-flag-usa"></i> U.S. History I & II (DE) <div class="course-description">Dual enrollment covering key U.S. historical events.</div></li>
+          <li><i class="fas fa-dna"></i> Biology II <div class="course-description">Advanced biology including anatomy, physiology, and biochemistry.</div></li>
+          <li><i class="fas fa-puzzle-piece"></i> 4 Pathway/Elective <div class="course-description">Select four electives or pathway courses to complete graduation requirements.</div></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    const headers = document.querySelectorAll('.accordion-header');
+
+    headers.forEach(header => {
+      header.addEventListener('click', () => {
+        const body = header.nextElementSibling;
+        const icon = header.querySelector('i');
+        const isOpen = body.style.display === 'block';
+
+        document.querySelectorAll('.accordion-body').forEach(b => b.style.display = 'none');
+        document.querySelectorAll('.accordion-header i').forEach(i => i.classList.replace('fa-chevron-up', 'fa-chevron-down'));
+
+        if (!isOpen) {
+          body.style.display = 'block';
+          icon.classList.replace('fa-chevron-down', 'fa-chevron-up');
+        }
+      });
+    });
+  </script>
+</body>
+</html>
